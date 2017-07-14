@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-
+using CustomRoutes.Models;
 namespace CustomRoutes.Controllers
 {
     public class HomeController : Controller
@@ -11,7 +11,10 @@ namespace CustomRoutes.Controllers
         // GET: Home
         public ActionResult Index()
         {
-            return View();
+
+
+            var products = ProductManager.GetProducts();
+            return View(products);
         }
     }
 }
